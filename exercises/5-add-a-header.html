@@ -47,6 +47,17 @@
       <script id='DOM manipulation script'>
         debugger;
         // write me! (... without using cloneNode, that's kind of cheating)
+        const repDiv = document.getElementById('replication');
+
+        const h1El = document.createElement("h1"); // new <h1>
+        h1El.innerText = 'a list of things'
+        repDiv.appendChild(h1El);
+        repDiv.insertBefore(h1El, repDiv.children[0]) // insert <h1> before <ul>
+        repDiv.children[1].children[1].innerText = 'solar systems'; // changed text in <li>
+
+        //or 
+        //repDiv.innerHTML = document.getElementById('target').innerHTML;
+
       </script>
 
     </div>
