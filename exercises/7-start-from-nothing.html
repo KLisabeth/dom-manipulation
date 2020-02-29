@@ -44,6 +44,33 @@
       <script id='DOM manipulation script'>
         debugger;
         // write me! (... without using cloneNode, that's kind of cheating)
+        const repDiv = document.getElementById('replication');
+          
+        const h2El = document.createElement('h2'); //create h2 element
+        h2El.innerText = "a list of things"; //change text
+        repDiv.appendChild(h2El); // connect as a child to <div>
+          
+        const ulEl = document.createElement("ul"); // create <ul>
+        ulEl.start = '0'; // ul element starts from 0
+        const items = ['robots', 'solar systems', '', 'oil']; //  <li> items
+        for (let item of items) { //loop for items to take place accept the link 
+        const liEl = document.createElement('li'); // <li> element
+        liEl.innerText = item;
+        ulEl.appendChild(liEl);
+          }
+        repDiv.appendChild(ulEl);
+          
+        const aEl = document.createElement('a'); //create <a> and fill it in
+        aEl.innerText = 'learn about badgers';
+        aEl.href = 'https://www.badgerbadgerbadger.com';
+        aEl.target = '_blank';
+        ulEl.children[2].appendChild(aEl);
+
+        //or 
+
+        // const tarDiv = document.getElementById('target')
+        // const repDiv = document.getElementById('replication');
+        // repDiv.innerHTML = tarDiv.innerHTML;
       </script>
 
     </div>
