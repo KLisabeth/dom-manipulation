@@ -48,6 +48,28 @@
       <script id='DOM manipulation script'>
         debugger;
         // write me! (... without using cloneNode, that's kind of cheating)
+        const repDiv = document.getElementById('replication');
+
+        const olEl = repDiv.children[0];  // location of <ol>
+        const ulEl = document.createElement('ul')  // new <ul>
+
+        const extraList = olEl.children[1]; // removed extra list
+        olEl.removeChild(extraList);
+
+
+        const h1El = document.createElement("h1"); // new <h1>
+        h1El.innerText = 'a list of things'; 
+        repDiv.appendChild(h1El);
+        repDiv.insertBefore(h1El, olEl)
+        repDiv.children[1].children[1].innerText = 'solar systems'; // change text
+
+        
+        const numItems = olEl.children.length; // loop to replace <ol> to  <ul>
+        for (let i = 0; i < numItems; i++) { 
+          const nextChild = olEl.children[i].cloneNode(true);
+          ulEl.appendChild(nextChild);
+        }
+        repDiv.replaceChild(ulEl, olEl);
       </script>
 
     </div>
