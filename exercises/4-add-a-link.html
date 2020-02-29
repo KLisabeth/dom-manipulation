@@ -40,6 +40,18 @@
       <script id='DOM manipulation script'>
         debugger;
        // write me! (... without using cloneNode, that's kind of cheating)
+       const tarDiv = document.getElementById('target');
+       const repDiv = document.getElementById('replication');
+
+       const liEl = document.createElement('a'); // new <a>
+       liEl.innerText = 'Mr. Traversy does it again!';
+       liEl.href = 'https://www.youtube.com/watch?v=0ik6X4DJKCc';
+       liEl.target = '_blank';
+       repDiv.appendChild(liEl);
+
+       //or
+       
+       //repDiv.innerHTML = tarDiv.innerHTML;
       </script>
 
     </div>
