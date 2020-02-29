@@ -39,6 +39,15 @@
       <script id='DOM manipulation script'>
         debugger;
         // write me! (... without using cloneNode, that's kind of cheating)
+        const tarDiv = document.getElementById('target');
+        const repDiv = document.getElementById('replication');
+        // repDiv.children[0].innerText = tarDiv.children[0].innerText;
+        // repDiv.children[0].target = tarDiv.children[0].target;
+       
+        //or
+        repDiv.children[0].innerText = 'learn about badgers';
+        repDiv.children[0].target = '_blank';
+
       </script>
 
     </div>
